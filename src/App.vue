@@ -29,8 +29,6 @@
     },
     beforeCreate() {
       /*  Set up the initial store */
-  
-      // Request the initial set of wallets
       GetWallets().then(result => {
         result.map(item => {
           this.$store.dispatch("ADD_ITEM", item);
@@ -58,16 +56,12 @@
       change() {
         // Calculate the sum of all wallets based on their exchange rates
         return this.portfolio.reduce((acc, cur) => {
-         
           return acc + cur.changeToday;
         }, 0);
       },
       ratesDict() {
-        let dict = {};
-        ExchangeRatesToCAD.forEach(rate => {
-          dict[rate.currency] = rate.rate;
-        });
-        return dict;
+        /* Transform array of ExchangeRate objects into a dict indexed by their currency */
+        return ExchangeRatesToCAD.map(rate => dict[rate.currency] = rate.rate);
       }
     },
     filters: {
