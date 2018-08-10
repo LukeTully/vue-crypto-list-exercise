@@ -23,6 +23,7 @@
     props: ["currency", "delta", "exchange"],
     computed: {
       icon() {
+        /* Import this item's icon */
         return require(`../assets/currency-icons/${this.$props.currency.toLowerCase()}.svg`);
       },
       gain() {
@@ -32,16 +33,17 @@
         return -1;
       },
       gainClass() {
-        if (this.gain == 1) return ['up'];
-        if (this.gain == -1) return ['down'];
+        /* Determine whether or not the arrow should indicate a gain or loss in our total portfolio */
+        if (this.gain == 1) return ["up"];
+        if (this.gain == -1) return ["down"];
       }
     },
     filters: {
       ratio(rate, divisor) {
+        /* Calculate how many of the current currency equate to the divisor */
         return 1 / (rate / divisor);
       },
       currency(num) {
-  
         let USDNumFormat = new Intl.NumberFormat('en-US', {
           style: 'currency',
           currency: 'USD'
