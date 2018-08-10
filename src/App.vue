@@ -37,9 +37,11 @@
     },
     computed: {
       portfolio() {
+        // Returns a list our active wallets while also adding their respective exchange rates to each object
         return this.$store.state.items.map(item => item["exchange"] = this.ratesDict[item.currency]);
       },
       critical() {
+        // Accessor for critical errors stored on state
         return this.$store.state.criticalError;
       },
       total() {
@@ -69,6 +71,7 @@
   * {
     box-sizing: border-box;
   }
+  
   #app {
     font-family: 'Source Sans Pro', Helvetica, Arial Black, sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -78,18 +81,17 @@
     margin-top: 60px;
     max-width: 50rem;
     background-color: #fff;
-    float:left;
-    clear:both;
+    float: left;
+    clear: both;
   }
   
-
   .page-title {
-    float:left;
-    display:block;
-    width:100%;
-    clear:both;
-    margin:0;
-    padding:0;
+    float: left;
+    display: block;
+    width: 100%;
+    clear: both;
+    margin: 0;
+    padding: 0;
     border-bottom: 1px solid #ddd;
     font-size: 1.6rem;
     padding-top: 1rem;
@@ -97,6 +99,7 @@
     padding-left: 1rem;
     text-align: left;
   }
+  
   body {
     background-color: rgba(155, 192, 164, 1);
   }
