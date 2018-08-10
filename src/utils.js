@@ -6,6 +6,15 @@ function roundToX(num, decimals) {
   return +(Math.round(num + `e+${decimals}`) + `e-${decimals}`);
 }
 
+function convertToCurrency(num, locale = "en-US", options = {
+  style: "currency",
+  currency: "USD"
+}) {
+  /* Formats an input number as US currency */
+  let format = new Intl.NumberFormat(locale, options);
+  return format.format(num);
+}
 export {
-  roundToX as precision
+  roundToX as precision,
+  convertToCurrency
 };
