@@ -1,7 +1,9 @@
 <template>
   <section id="portfolio-container" class="portfolio-container">
     <div v-for="item in changedItems" :key="item.currency">
-      <portfolio-item :currency="item.currency" :exchange="item.exchange" :delta="item.changeToday" :amount="item.amount"/>
+      <transition appear name="fade">
+              <portfolio-item :currency="item.currency" :exchange="item.exchange" :delta="item.changeToday" :amount="item.amount"/>
+      </transition>
     </div>
   </section>
 </template>
@@ -55,4 +57,10 @@
     padding-top: 1rem;
     background: white;
   }
+  .fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
 </style>
