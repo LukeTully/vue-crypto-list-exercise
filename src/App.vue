@@ -2,6 +2,7 @@
   <div id="app">
     <h1 class="page-title">Your Portfolio</h1>
     <div v-if="critical">
+      <!-- This would ideally display a connection or other critical error if that was working -->
       {{critical}}
     </div>
     <portfolio-summary :change="change" :total="total" />
