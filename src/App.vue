@@ -41,7 +41,7 @@
         return this.$store.state.items.map(item => {
           item["exchange"] = this.ratesDict[item.currency];
           return item;
-          });
+        });
       },
       critical() {
         // Accessor for critical errors stored on state
@@ -67,11 +67,11 @@
     },
     filters: {
       currency(num) {
-
+  
         let nf = new Intl.NumberFormat('en-US', {
           style: 'currency',
           currency: 'USD'
-        }); 
+        });
         return nf.format(num);
       }
     }
