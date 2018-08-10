@@ -44,9 +44,7 @@
       },
       total() {
         // Calculate the sum of all wallets based on their exchange rates
-        return this.portfolio.reduce((acc, cur) => {
-          return acc + this.ratesDict[cur.currency] * cur.amount;
-        }, 0);
+        return this.portfolio.reduce((acc, cur) => acc + this.ratesDict[cur.currency] * cur.amount, 0);
       },
       change() {
         // Calculate the sum of all currenct fluxuations based on their changeToday value
