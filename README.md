@@ -6,9 +6,10 @@
     - Vuex for state management
     - Forked webpack-exports-loader (on my github) to fix how it wraps legacy non es6 modules (PR coming soon)
 
-- Things that I didn't spend a ton of time on
+- Things that I intentionally didn't spend a ton of time on
     - CSS. It's really hacked together.
     - Design. Takes more time than I'm able to devote to this. It doesn't break horribly.
+    - Error handling. I'm aware.
 
 
 
