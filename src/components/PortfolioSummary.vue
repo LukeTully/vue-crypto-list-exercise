@@ -1,0 +1,84 @@
+<template>
+  <header id="portfolio-summary-container" class="portfolio-summary-container">
+  
+    <p class="portfolio-label" id="portfolio-label">Portfolio Value</p>
+    <h2 class="total-value">C{{total | currency}}</h2>
+    <h4 class="portfolio-change" :class="gain ? 'up' : 'down'">
+      <div class="inline-icon-container" :class="[gain ? 'up' : 'down', 'arrow-icon']">&#x25b6;</div> {{change | currency}}
+    </h4>
+  </header>
+</template>
+
+<script>
+  export default {
+    name: "PortfolioSummary",
+    props: ['total', 'change'],
+    computed: {
+      gain() {
+        return (this.change > 0);
+      }
+    },
+    filters: {
+      currency(num) {
+  
+        let USDNumFormat = new Intl.NumberFormat('en-US', {
+          style: 'currency',
+          currency: 'USD'
+        });
+        return USDNumFormat.format(num);
+  
+      }
+    }
+  };
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped>
+  #portfolio-summary-container {
+    float: left;
+    clear: both;
+    width: 100%;
+  }
+  
+  h1,
+  h2 {
+    font-weight: 900;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    display: inline-block;
+    margin: 0 10px;
+  }
+  
+  a {
+    color: #42b983;
+  }
+  
+  .portfolio-summary-container {
+    background-color: #fff;
+    box-shadow: 0px 4px 3px #ddd;
+  }
+  
+  .portfolio-change {
+    font-weight: 600;
+    font-size: 2rem;
+    padding: 0;
+    margin: 0.4rem 0 0 0;
+  }
+  
+  .total-value {
+    font-size: 3rem;
+    padding: 0;
+    margin: 1rem 0 0 0;
+  }
+  
+  .portfolio-label {
+    padding: 0;
+    margin: 2rem 0 0 0;
+  }
+</style>
