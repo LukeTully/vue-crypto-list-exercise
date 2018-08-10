@@ -19,8 +19,8 @@
     computed: {
       gain() {
         /* Determine if a there is a positive, negative, or no difference in value today */
-        if (this.delta == 0) return 0;
-        if (this.delta > 0) return 1;
+        if (this.change == 0) return 0;
+        if (this.change > 0) return 1;
         return -1;
       },
       gainClass() {
