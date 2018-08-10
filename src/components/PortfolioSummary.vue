@@ -1,6 +1,5 @@
 <template>
   <header id="portfolio-summary-container" class="portfolio-summary-container">
-  
     <p class="portfolio-label" id="portfolio-label">Portfolio Value</p>
     <h2 class="total-value">C{{total | currency}}</h2>
     <h4 class="portfolio-change" :class="[gainClass]">
@@ -12,7 +11,7 @@
 <script>
   export default {
     name: "PortfolioSummary",
-    props: ['total', 'change'],
+    props: ["total", "change"],
     computed: {
       gain() {
         /* Determine if a there is a positive, negative, or no difference in value today */
@@ -22,25 +21,23 @@
       },
       gainClass() {
         /* Determine whether or not the arrow should indicate a gain or loss in our total portfolio */
-        if (this.gain == 1) return ['up'];
-        if (this.gain == -1) return ['down'];
+        if (this.gain == 1) return ["up"];
+        if (this.gain == -1) return ["down"];
       }
     },
     filters: {
       currency(num) {
-  
-        let USDNumFormat = new Intl.NumberFormat('en-US', {
-          style: 'currency',
-          currency: 'USD'
+        /* Formats an input number as US currency */
+        let USDNumFormat = new Intl.NumberFormat("en-US", {
+          style: "currency",
+          currency: "USD"
         });
         return USDNumFormat.format(num);
-  
       }
     }
   };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
   #portfolio-summary-container {
     float: left;
