@@ -10,6 +10,7 @@
 
 <script>
   import * as Utils from "../utils.js";
+  
   export default {
     name: "PortfolioSummary",
     props: ["total", "change"],
