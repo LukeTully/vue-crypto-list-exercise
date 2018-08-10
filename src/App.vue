@@ -37,12 +37,7 @@
     },
     computed: {
       portfolio() {
-        let rates = this.ratesDict;
-        return this.$store.state.items.map(item => {
-          let p = item;
-          p["exchange"] = rates[p.currency];
-          return p;
-        });
+        return this.$store.state.items.map(item => item["exchange"] = this.ratesDict[item.currency]);
       },
       critical() {
         return this.$store.state.criticalError;
