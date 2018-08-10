@@ -4,7 +4,7 @@
     <div v-if="critical">
       {{critical}}
     </div>
-    <portfolio-summary :change="change | currency" :total="total | currency" />
+    <portfolio-summary :change="change" :total="total" />
     <portfolio-list :items="portfolio" />
   </div>
 </template>
@@ -38,7 +38,10 @@
     computed: {
       portfolio() {
         // Returns a list our active wallets while also adding their respective exchange rates to each object
-        return this.$store.state.items.map(item => item["exchange"] = this.ratesDict[item.currency]);
+        return this.$store.state.items.map(item => {
+          item["exchange"] = this.ratesDict[item.currency];
+          return item;
+          });
       },
       critical() {
         // Accessor for critical errors stored on state
@@ -56,12 +59,20 @@
       },
       ratesDict() {
         /* Transform array of ExchangeRate objects into a dict indexed by their currency */
-        return ExchangeRatesToCAD.map(rate => dict[rate.currency] = rate.rate);
+        return ExchangeRatesToCAD.reduce((acc, rate) => {
+          acc[rate.currency] = rate.rate;
+          return acc;
+        }, {});
       }
     },
     filters: {
       currency(num) {
-        return Utils.precision(num, 2);
+
+        let nf = new Intl.NumberFormat('en-US', {
+          style: 'currency',
+          currency: 'USD'
+        }); 
+        return nf.format(num);
       }
     }
   };
