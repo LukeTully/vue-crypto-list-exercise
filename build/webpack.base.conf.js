@@ -3,6 +3,7 @@ const path = require("path");
 const utils = require("./utils");
 const config = require("../config");
 const vueLoaderConfig = require("./vue-loader.conf");
+const ExtractTextPlugin = require("extract-text-webpack-plugin")
 
 function resolve(dir) {
   return path.join(__dirname, "..", dir);
@@ -69,18 +70,11 @@ module.exports = {
         }
       },
       {
-        test: /\.scss$/,
-        use: [
-          {
-            loader: "style-loader" // creates style nodes from JS strings
-          },
-          {
-            loader: "css-loader" // translates CSS into CommonJS
-          },
-          {
-            loader: "sass-loader" // compiles Sass to CSS
-          }
-        ]
+        test: /\.css$/,
+        loader: ExtractTextPlugin.extract({
+          use: 'css-loader',
+          fallback: 'vue-style-loader'
+        })
       },
       {
         test: require.resolve(resolve("src/ApiMock.js")),
