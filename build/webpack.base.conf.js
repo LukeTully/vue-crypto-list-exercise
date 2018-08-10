@@ -85,7 +85,7 @@ module.exports = {
       {
         test: require.resolve(resolve("src/ApiMock.js")),
         use:
-          "exports-loader?Wallet,ExchangeRate, ExchangeRatesToCAD,GetWallets,AssetGenerator"
+          "exports-loader?Wallet,ExchangeRate, ExchangeRatesToCAD,GetWallets"
       }
     ]
   },

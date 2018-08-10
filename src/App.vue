@@ -18,8 +18,7 @@
     Wallet,
     ExchangeRate,
     ExchangeRatesToCAD,
-    GetWallets,
-    AssetGenerator
+    GetWallets
   } from "./ApiMock.js";
   
   export default {
