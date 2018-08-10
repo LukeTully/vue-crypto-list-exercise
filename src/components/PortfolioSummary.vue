@@ -3,8 +3,8 @@
   
     <p class="portfolio-label" id="portfolio-label">Portfolio Value</p>
     <h2 class="total-value">C{{total | currency}}</h2>
-    <h4 class="portfolio-change" :class="gain ? 'up' : 'down'">
-      <div class="inline-icon-container" :class="[gain ? 'up' : 'down', 'arrow-icon']">&#x25b6;</div> {{change | currency}}
+    <h4 class="portfolio-change" :class="[gainClass]">
+      <div class="inline-icon-container" :class="[gainClass,'arrow-icon']">&#x25b6;</div> {{change | currency}}
     </h4>
   </header>
 </template>
