@@ -1,7 +1,7 @@
 <template>
   <div id="portfolio-container" class="portfolio-container">
     <div v-for="item in changedItems" :key="item.currency">
-      <PortfolioItem :currency="item.currency" :exchange="item.exchange" :delta="item.changeToday" />
+      <portfolio-item :currency="item.currency" :exchange="item.exchange" :delta="item.changeToday" />
   
     </div>
   </div>

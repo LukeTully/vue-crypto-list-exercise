@@ -5,7 +5,7 @@
       {{critical}}
     </div>
     <portfolio-summary :change="change | currency" :total="total | currency" />
-    <PortfolioList :items="portfolio" />
+    <portfolio-list :items="portfolio" />
   </div>
 </template>
 
