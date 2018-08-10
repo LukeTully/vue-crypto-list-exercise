@@ -89,11 +89,12 @@
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
     color: #2c3e50;
-    margin-top: 60px;
-    max-width: 50rem;
+    max-width: 40rem;
     background-color: #fff;
     float: left;
     clear: both;
+    padding-bottom: 1rem;
+    width:100%;
   }
   
   .page-title {
