@@ -18,6 +18,7 @@
         return (this.change > 0);
       },
       gainClass() {
+        /* Determine whether or not the arrow should indicate a gain or loss in our total portfolio */
         if (this.gain == 1) return ['up'];
         if (this.gain == -1) return ['down'];
       }
