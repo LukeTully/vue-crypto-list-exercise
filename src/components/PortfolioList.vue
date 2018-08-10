@@ -23,15 +23,6 @@
         */
         return this.items.filter(item => item.changeToday !== 0)
       }
-    },
-    methods: {
-      add_user: function() {
-        this.$store.dispatch("ADD_USER", this.user);
-  
-      },
-      delete_user: function(index) {
-        this.$store.dispatch("DELETE_USER", index);
-      }
     }
   };
 </script>
