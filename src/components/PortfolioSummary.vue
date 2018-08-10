@@ -9,6 +9,7 @@
 </template>
 
 <script>
+  import * as Utils from "../utils.js";
   export default {
     name: "PortfolioSummary",
     props: ["total", "change"],
@@ -27,13 +28,15 @@
     },
     filters: {
       currency(num) {
-        /* Formats an input number as US currency */
-        let USDNumFormat = new Intl.NumberFormat("en-US", {
-          style: "currency",
-          currency: "USD"
-        });
-        return USDNumFormat.format(num);
-      }
+        /*
+          Converts the input number to USD using default
+          optional params can be included according to the Intl.NumberFormat spec
+          num: Number: number to convert to currency
+          locale: String: local language tag that the currency format should be returned in
+          options: Object: Other config options according to spec
+         */
+        return Utils.convertToCurrency(num);
+      },
     }
   };
 </script>

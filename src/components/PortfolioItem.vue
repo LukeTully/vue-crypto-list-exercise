@@ -44,12 +44,14 @@
         return 1 / (rate / divisor);
       },
       currency(num) {
-        let USDNumFormat = new Intl.NumberFormat('en-US', {
-          style: 'currency',
-          currency: 'USD'
-        });
-        return USDNumFormat.format(num);
-  
+        /*
+          Converts the input number to USD using default
+          optional params can be included according to the Intl.NumberFormat spec
+          num: Number: number to convert to currency
+          locale: String: local language tag that the currency format should be returned in
+          options: Object: Other config options according to spec
+         */
+        return Utils.convertToCurrency(num);
       },
       precision(num, decimals) {
         return Utils.precision(num, decimals);
