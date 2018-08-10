@@ -1,6 +1,5 @@
 import Vue from "vue";
 import Vuex from "vuex";
-import * as API from './ApiMock.js'
 
 Vue.use(Vuex);
 
