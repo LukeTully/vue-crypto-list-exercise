@@ -12,25 +12,21 @@ const store = new Vuex.Store({
   actions: {
     ADD_ITEM: function({ commit }, new_portfolio_item) {
       commit("ADD_ITEM_MUTATION", new_portfolio_item);
-    },
-    DELETE_ITEM: function({ commit }, item_id) {
-      commit("DELETE_ITEM_MUTATION", item_id);
-    },
+    }
   },
   mutations: {
     ADD_ITEM_MUTATION: function(state, new_portfolio_item) {
-      
+      /* Adds a new item to our portfolio */
       state.items.push(new_portfolio_item);
     },
-    DELETE_ITEM_MUTATION: function(state, item_id) {
-      state.items.splice(item_id, 1);
-    },
     GEN_CRITICAL_ERROR: function(state, error) {
+      /* Elevates an error to critical status by assigning it to state */
       state.criticalError = error;
     }
   },
   getters: {
     items: state => {
+      /* Returns our current portfolio state */
       return state.items;
     }
   }
