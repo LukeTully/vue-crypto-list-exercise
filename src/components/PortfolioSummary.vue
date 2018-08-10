@@ -15,7 +15,10 @@
     props: ['total', 'change'],
     computed: {
       gain() {
-        return (this.change > 0);
+        /* Determine if a there is a positive, negative, or no difference in value today */
+        if (this.delta == 0) return 0;
+        if (this.delta > 0) return 1;
+        return -1;
       },
       gainClass() {
         /* Determine whether or not the arrow should indicate a gain or loss in our total portfolio */
