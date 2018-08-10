@@ -1,10 +1,9 @@
 <template>
-  <div id="portfolio-container" class="portfolio-container">
+  <section id="portfolio-container" class="portfolio-container">
     <div v-for="item in changedItems" :key="item.currency">
       <portfolio-item :currency="item.currency" :exchange="item.exchange" :delta="item.changeToday" />
-  
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
