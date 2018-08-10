@@ -16,6 +16,10 @@
     computed: {
       gain() {
         return (this.change > 0);
+      },
+      gainClass() {
+        if (this.gain == 1) return ['up'];
+        if (this.gain == -1) return ['down'];
       }
     },
     filters: {
