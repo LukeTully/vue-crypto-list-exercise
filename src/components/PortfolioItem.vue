@@ -91,6 +91,8 @@
     border: 1px solid #ddd;
     margin-top: 0.5rem;
     border-radius: 2px;
+    width:100%;
+    
     display: flex;
     flex-flow: row;
     padding-top: 0.4rem;
