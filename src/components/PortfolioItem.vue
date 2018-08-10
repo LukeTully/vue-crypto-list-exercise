@@ -1,11 +1,15 @@
 <template>
   <div id="portfolio-item-container" class="portfolio-item-container">
+    <!-- Ticker icon -->
     <img :src="icon" class="portfolio-item-icon" width="100" height="100" />
+    <!-- Exchange rate -->
     <div class="ticker-value-container">{{currency}}<br/>{{ exchange | ratio(10000) | precision(4) }} {{currency}} / $10000 CAD</div>
     <div class="item-value-container">
+      <!-- Change in this Wallet's value today -->
       <p class="portfolio-change" :class="[gainClass]">
         <span v-if="gain !== 0" class="inline-icon-container" :class="['arrow-icon', gainClass]">&#x25b6;</span> {{delta | currency }}
       </p>
+      <!-- Honestly not really sure what this was here for -->
       <p>C$10000.10</p>
     </div>
   </div>
