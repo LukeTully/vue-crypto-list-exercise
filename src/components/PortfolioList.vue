@@ -17,6 +17,10 @@
     props: ['items'],
     computed: {
       changedItems() {
+        /*
+        Only display portfolio items that have changed in value from the previous day
+        TODO: Should be more robust. Assuming that we wouldn't want to display neutral wallets doesn't make a ton of sense.
+        */
         return this.items.filter(item => item.changeToday !== 0)
       }
     },
