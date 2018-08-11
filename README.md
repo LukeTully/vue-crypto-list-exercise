@@ -7,6 +7,7 @@
     - Forked webpack-exports-loader (on my github) to fix how it wraps legacy non es6 modules (PR coming soon)
 
 - Things that I intentionally didn't spend a ton of time on
+    - Animations. I merely included the "appear" animation to get a brief example working. In any final product, I'd be hesitant to include it anyway, because it's easy overdo it, but furter interaction could lend itself to increased use.
     - CSS. It's really hacked together.
     - Design. Takes more time than I'm able to devote to this. It doesn't break horribly.
     - Error handling. I'm aware.
