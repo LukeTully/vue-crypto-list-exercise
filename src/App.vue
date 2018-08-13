@@ -3,9 +3,9 @@
     <h1 class="page-title">Your Portfolio</h1>
     <div v-if="critical">
       <!-- This would ideally display a connection or other critical error if that was working -->
-      {{error}}
+      {{critical}}
     </div>
-    <template v-else>
+    <template v-if="portfolio">
       <portfolio-summary :change="change" :total="total" />
       <portfolio-list :items="portfolio" />
     </template>
