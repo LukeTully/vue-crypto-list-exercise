@@ -11,10 +11,14 @@ const store = new Vuex.Store({
   actions: {
     ADD_ITEM: function({ commit }, new_portfolio_item) {
       commit("ADD_ITEM_MUTATION", new_portfolio_item);
+    },
+    SET_CRITICAL_ERROR: function({commit}, error) {
+      commit("GEN_CRITICAL_ERROR", error);
     }
   },
   mutations: {
     ADD_ITEM_MUTATION: function(state, new_portfolio_item) {
+      
       /* Adds a new item to our portfolio */
       state.items.push(new_portfolio_item);
     },

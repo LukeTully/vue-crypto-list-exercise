@@ -3,10 +3,12 @@
     <h1 class="page-title">Your Portfolio</h1>
     <div v-if="critical">
       <!-- This would ideally display a connection or other critical error if that was working -->
-      {{critical}}
+      {{error}}
     </div>
-    <portfolio-summary :change="change" :total="total" />
-    <portfolio-list :items="portfolio" />
+    <template v-else>
+      <portfolio-summary :change="change" :total="total" />
+      <portfolio-list :items="portfolio" />
+    </template>
   </div>
 </template>
 
@@ -33,6 +35,10 @@
         result.map(item => {
           this.$store.dispatch("ADD_ITEM", item);
         });
+      }, error => {
+        if (error) {
+          this.$store.dispatch("SET_CRITICAL_ERROR", error);
+        }
       });
     },
     computed: {
@@ -94,7 +100,7 @@
     float: left;
     clear: both;
     padding-bottom: 1rem;
-    width:100%;
+    width: 100%;
   }
   
   .page-title {
