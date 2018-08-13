@@ -4,6 +4,14 @@ import localForage from "localforage";
 
 Vue.use(Vuex);
 
+/* Configure localForage */
+localForage.config({
+  name        : 'vue-lists',
+  version     : 1.0,
+  storeName   : 'portfolio', // Should be alphanumeric, with underscores.
+});
+
+
 const store = new Vuex.Store({
   state: {
     items: [],
