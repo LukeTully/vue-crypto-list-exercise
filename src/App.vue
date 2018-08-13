@@ -24,7 +24,7 @@
   } from "./ApiMock.js";
   
   export default {
-    name: "App",
+    name: "vue-lists",
     components: {
       PortfolioList,
       PortfolioSummary
