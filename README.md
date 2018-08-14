@@ -6,7 +6,7 @@ Replicate a rudimentary list component based on a provided screenshot, using Vue
 
 - Notes
     - Vuex for state management
-    - Forked webpack-exports-loader (on my github) to fix how it wraps legacy non es6 modules (PR coming soon)
+    - Forked webpack-exports-loader (https://github.com/LukeTully/exports-loader) to fix how it wraps legacy non es6 modules (PR coming soon)
 
 - Things that I intentionally didn't spend a ton of time on
     - Animations. I merely included the "appear" animation to get a brief example working. In any final product, I'd be hesitant to include it anyway, because it's easy overdo it, but furter interaction could lend itself to increased use.
