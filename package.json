@@ -1,7 +1,7 @@
 {
-  "name": "symetria-homework",
+  "name": "vue-lists",
   "version": "1.0.0",
-  "description": "A Vue.js project",
+  "description": "Generic list style components implemented with Vue",
   "author": "Luke <luke@luketully.ca>",
   "private": true,
   "scripts": {
