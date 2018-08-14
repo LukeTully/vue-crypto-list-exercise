@@ -1,6 +1,8 @@
-# Symetria Vue Exercise
+# What dis is
+A Vue based exercise I did during the interview process for a crypto startup in Vancouver
 
-> A Vue based homework exercise as part of the Symetria interview process
+## Requirement
+Replicate a rudimentary list component based on a provided screenshot, using Vue JS.
 
 - Notes
     - Vuex for state management
@@ -8,11 +10,9 @@
 
 - Things that I intentionally didn't spend a ton of time on
     - Animations. I merely included the "appear" animation to get a brief example working. In any final product, I'd be hesitant to include it anyway, because it's easy overdo it, but furter interaction could lend itself to increased use.
-    - CSS. It's really hacked together.
+    - CSS. It's really hacked together so far. Might improve on principle
     - Design. Takes more time than I'm able to devote to this. It doesn't break horribly.
-    - Error handling. I'm aware.
-
-
+    - Error handling. It's quite rudementary. This particular company was expecting too much from prospective hires in my opinion, so I cut it off here and didn't devote more time to this during the interview process.
 
 ## Build Setup
 
